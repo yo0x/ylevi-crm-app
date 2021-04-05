@@ -1,1 +1,27 @@
-<p>admin-portal works!</p>
+<div class="row d-flex justify-content-center align-items-center">
+    <form #UserProject="ngForm" (ngSubmit)="onSubmit(UserProject.value)">
+        First Name:<br>
+        <input type="text" name="name" ngModel aria-describedby="name" placeholder="Your Name"><br>
+        Last Name:<br>
+        <input type="text" name="name" ngModel aria-describedby="lastname" placeholder="Your lastname">
+        ID number:<br>
+        <input type="text" name="name" ngModel aria-describedby="IDnumber" placeholder="Your Teudat zeut"><br>
+        Project title:<br>
+        <input type="text" name="name" ngModel aria-describedby="title" placeholder="Project's title"><br>
+        Project description:<br>
+        <input type="text" name="name" ngModel aria-describedby="description" placeholder="Project's description"><br>
+        Status:<br>
+        <select ngModel aria-describedby="status">
+            <option value="">
+            <option value="notinit">Have not started yet
+            <option value="inprog">In progress
+            <option value="complete">Complete
+                <br>
+        </select>
+        <br><br>
+        <button type="submit" name="save" value="Save" class="btn btn-primary" style="justify-self: start;">
+            <i class="far fa-paper-plane fa-lg"></i>
+            Send
+        </button>
+    </form>
+</div>
