@@ -4,6 +4,7 @@ import {AdminPortalComponent} from './admin-portal/admin-portal.component';
 import {ProjectsViewComponent} from './projects-view/projects-view.component';
 
 const routes: Routes = [
+  {path: '',component: ProjectsViewComponent},
   {path: 'projects',component: ProjectsViewComponent},
   {path: 'adduser',component: AdminPortalComponent},
 ];

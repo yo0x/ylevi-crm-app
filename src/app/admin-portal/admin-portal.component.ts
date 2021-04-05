@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Project } from '../models/project.model';
 import { DataService } from '../data.service';
-
+import {FormsModule, NgForm} from '@angular/forms'
 @Component({
   selector: 'app-admin-portal',
   templateUrl: './admin-portal.component.html',
@@ -18,14 +18,14 @@ export class AdminPortalComponent implements OnInit {
     private http: HttpClient
   ) { }
 
-  ngOnInit(): void {
-    return this.dataService.getProjects()
-    .subscribe(data => this.currentProjects$ = data)
+  ngOnInit() {
+   
   }
-  onSubmit(data: any) {
-    this.http.post('http://localhost:3000/contact', data).subscribe((data) => {
+  onSubmit(data: any, myForm : NgForm) {
+    this.http.post('http://172.20.40.166:3000/projects', data).subscribe((data) => {
       console.warn(data);
     });
-
+   // this.dataService.postProject(data);
+    myForm.reset();
   }
 }

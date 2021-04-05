@@ -1,11 +1,38 @@
 <div class="row d-flex justify-content-center align-items-center">
-    <form #UserProject="ngForm" (ngSubmit)="onSubmit(UserProject.value)">
+    <form #UserQ="ngForm" (ngSubmit)="onSubmit(UserQ.value, UserQ)">
         ID number:<br>
-        <input type="text" name="name" ngModel aria-describedby="IDnumber" placeholder="Your Teudat zeut"><br>
+        <input type="text" name="IDnumber" ngModel aria-describedby="IDnumber" placeholder="Your Teudat zeut"><br>
         <br><br>
         <button type="submit" name="save" value="Save" class="btn btn-primary" style="justify-self: start;">
             <i class="far fa-paper-plane fa-lg"></i>
             Send
         </button>
     </form>
+    <div>
+        <h1>Projects by client: </h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Last name</th>
+                    <th>Id Number</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Status</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let _proj of currentProjects$">
+                    <td>{{_proj.name}}</td>
+                    <td>{{_proj.lastname}}</td>
+                    <td>{{_proj.IDnumber}}</td>
+                    <td>{{_proj.title}}</td>
+                    <td>{{_proj.description}}</td>
+                    <td>{{_proj.status}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
 </div>

@@ -1,17 +1,17 @@
 <div class="row d-flex justify-content-center align-items-center">
-    <form #UserProject="ngForm" (ngSubmit)="onSubmit(UserProject.value)">
+    <form #UserProject="ngForm" (ngSubmit)="onSubmit(UserProject.value,UserProject)">
         First Name:<br>
-        <input type="text" name="name" ngModel aria-describedby="name" placeholder="Your Name"><br>
+        <input type="text" class="form-control" name="name" ngModel aria-describedby="namePro" placeholder="Your Name"><br>
         Last Name:<br>
-        <input type="text" name="name" ngModel aria-describedby="lastname" placeholder="Your lastname">
+        <input type="text" class="form-control" name="lastname" ngModel aria-describedby="lastnamePro" placeholder="Your lastname">
         ID number:<br>
-        <input type="text" name="name" ngModel aria-describedby="IDnumber" placeholder="Your Teudat zeut"><br>
+        <input type="text" class="form-control" name="IDnumber" ngModel aria-describedby="IDnumberPro" placeholder="Your Teudat zeut"><br>
         Project title:<br>
-        <input type="text" name="name" ngModel aria-describedby="title" placeholder="Project's title"><br>
+        <input type="text" class="form-control" name="title" ngModel aria-describedby="titlePro" placeholder="Project's title"><br>
         Project description:<br>
-        <input type="text" name="name" ngModel aria-describedby="description" placeholder="Project's description"><br>
+        <input type="text" class="form-control" name="description" ngModel aria-describedby="descriptionPro" placeholder="Project's description"><br>
         Status:<br>
-        <select ngModel aria-describedby="status">
+        <select ngModel class="form-control" name="status" aria-describedby="statusPro">
             <option value="">
             <option value="notinit">Have not started yet
             <option value="inprog">In progress

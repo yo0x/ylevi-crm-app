@@ -6,13 +6,17 @@ import { Project } from './models/project.model';
   providedIn: 'root'
 })
 export class DataService {
-  api_projects_url = 'http://localhost:3000/projects';
-  
+  api_projects_url = 'http://172.20.40.166:3000/projects';
+  project$: Project = new Project();
   constructor(private _http: HttpClient) { }
-  getProjects() {
-    return this._http.get<Project[]>(this.api_projects_url);
+  getProjects(data : any) {
+    this.project$ = data;
+    console.warn(this.project$.IDnumber);
+    return this._http.get<Project[]>(this.api_projects_url+'/'+this.project$.IDnumber);
+    
   }
   postProject(data: any){
+   
     this._http.post(this.api_projects_url,data);
     console.warn(data);
   }
