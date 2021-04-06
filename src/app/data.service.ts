@@ -6,7 +6,7 @@ import { Project } from './models/project.model';
   providedIn: 'root'
 })
 export class DataService {
-  api_projects_url = 'http://172.20.40.166:3000/projects';
+  api_projects_url = 'http://localhost:3000/projects';
   project$: Project = new Project();
   constructor(private _http: HttpClient) { }
   getProjects(data : any) {
