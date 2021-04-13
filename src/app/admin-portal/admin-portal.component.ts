@@ -22,7 +22,7 @@ export class AdminPortalComponent implements OnInit {
    
   }
   onSubmit(data: any, myForm : NgForm) {
-    this.http.post('https://localhost:3001/projects', data).subscribe((data) => {
+    this.http.post('https://127.0.0.1:3001/projects', data).subscribe((data) => {
       console.warn(data);
     });
    // this.dataService.postProject(data);
